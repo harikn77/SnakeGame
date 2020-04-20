@@ -2,6 +2,8 @@
 #define GAME_H
 
 #include <random>
+#include <string>
+#include <vector>
 
 #include "SDL.h"
 #include "controller.h"
@@ -30,7 +32,7 @@ class Game {
     int score{0};
     int level{0};
     int diff;
-
+    std::vector<std::string> difficulty { "Easy", "Medium", "Hard" };
     void PlaceFood();
     void Update();
 };

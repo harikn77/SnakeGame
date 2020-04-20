@@ -1,7 +1,6 @@
 #include "renderer.h"
 
 #include <iostream>
-#include <string>
 
 // int Snake::level;
 
@@ -109,7 +108,7 @@ void Renderer::Render(Snake const snake, SDL_Point const &food) {
     SDL_RenderPresent(sdl_renderer);
 }
 
-void Renderer::UpdateWindowTitle(int level, int score, int fps) {
-    std::string title{"Snake Level: " + std::to_string(level) + " Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
+void Renderer::UpdateWindowTitle(std::string diff, int level, int score, int fps) {
+    std::string title{"Snake " + diff + " Level: " + std::to_string(level) + " Score: " + std::to_string(score) + " FPS: " + std::to_string(fps)};
     SDL_SetWindowTitle(sdl_window, title.c_str());
 }

@@ -81,14 +81,15 @@ bool Snake::SnakeCell(int x, int y) {
 }
 
 bool Snake::isObstacle(int x, int y) {
+    // std::cout << x << " " << y << std::endl;
     switch (level) {
         case 0:
             return false;
         case 1:
             return (x == 0 || y == 0 || x == kGridWidth - 1 || y == kGridHeight - 1);
         case 2:
-            return ((x == kGridWidth / 4 || x == kGridWidth * 3 / 4) && y >= kGridHeight / 4 && y <= kGridHeight * 3 / 4);
+            return ((x == kGridWidth / 4 || x == kGridWidth * 3 / 4) && y >= kGridHeight / 4 && y < kGridHeight * 3 / 4);
         case 3:
-            return (x == 0 || y == 0 || x == kGridWidth - 1 || y == kGridHeight - 1 || ((x == kGridWidth / 4 || x == kGridWidth * 3 / 4) && y >= kGridHeight / 4 && y <= kGridHeight * 3 / 4));
+            return (x == 0 || y == 0 || x == kGridWidth - 1 || y == kGridHeight - 1 || ((x == kGridWidth / 4 || x == kGridWidth * 3 / 4) && y >= kGridHeight / 4 && y < kGridHeight * 3 / 4));
     }
 }

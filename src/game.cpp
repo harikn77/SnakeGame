@@ -41,7 +41,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
         // After every second, update the window title.
         if (frame_end - title_timestamp >= 1000) {
-            renderer.UpdateWindowTitle(snake.level, score, frame_count);
+            renderer.UpdateWindowTitle(difficulty[diff-1], snake.level, score, frame_count);
             frame_count = 0;
             title_timestamp = frame_end;
         }
@@ -92,7 +92,7 @@ void Game::Update() {
             case 1:
             default:
                 score++;
-                snake.speed += 0.01;
+                // snake.speed += 0.01;
                 break;
         }
         // score++;
